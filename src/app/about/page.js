@@ -1,51 +1,35 @@
 // src/app/about/page.js
+import Image from 'next/image';
+import styles from './about.module.css';
+
 export default function About() {
     return (
-        <section
-            style={{
-                padding: '48px 24px',
-                maxWidth: '1100px',
-                margin: '0 auto',
-            }}
-        >
-            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#1F3B57', margin: 0 }}>
-                About Me
-            </h2>
+        <section className={styles.aboutSection}>
+            <h2 className={styles.heading}>About Me</h2>
 
-            <div
-                style={{
-                    display: 'flex',
-                    gap: '40px',
-                    alignItems: 'flex-start',
-                    flexWrap: 'wrap',
-                    marginTop: '24px',
-                }}
-            >
+            <div className={styles.aboutFlex}>
                 {/* Left column: profile image */}
-                <div style={{ flex: '0 0 160px' }}>
-                    <img
+                <div className={styles.aboutImage}>
+                    <Image
                         src="/images/profile.jpeg"
-                        alt="Jashwanth Kandula"
-                        style={{
-                            width: '160px',
-                            height: '160px',
-                            borderRadius: '50%',
-                            objectFit: 'cover',
-                            display: 'block',
-                        }}
+                        alt="Jashwanth Kandula portrait"
+                        width={160}
+                        height={160}
+                        priority
+                        style={{ borderRadius: '50%', objectFit: 'cover' }}
                     />
                 </div>
 
                 {/* Right column: existing About text */}
-                <div style={{ flex: '1 1 400px', minWidth: 0 }}>
-                    <p style={{ marginTop: 0, lineHeight: 1.7, fontSize: '18px', color: '#0f172a' }}>
+                <div className={styles.aboutText}>
+                    <p>
                         I am a Data Scientist and Machine Learning Engineer with more than two years of applied
                         research experience. My work spans Generative AI, RAG pipelines, Knowledge Graphs,
                         Multi Objective Optimization, and full stack ML systems. I have contributed to impactful
                         projects at Mercedes Benz USA, Dell Technologies, Shepherd Center, and JNTUH.
                     </p>
 
-                    <p style={{ marginTop: '20px', lineHeight: 1.7, fontSize: '18px', color: '#0f172a' }}>
+                    <p>
                         I enjoy building intelligent systems that reduce manual effort, improve decision making,
                         and deliver measurable business and clinical value. My technical strengths include Python,
                         LangChain, PyTorch, XGBoost, cloud platforms, and scalable ML architecture.

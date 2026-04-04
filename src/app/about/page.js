@@ -1,4 +1,3 @@
-// src/app/about/page.js
 import Image from 'next/image';
 import styles from './about.module.css';
 
@@ -8,7 +7,6 @@ export default function About() {
             <h2 className={styles.heading}>About Me</h2>
 
             <div className={styles.aboutFlex}>
-                {/* Left column: profile image */}
                 <div className={styles.aboutImage}>
                     <Image
                         src="/images/profile.jpeg"
@@ -20,20 +18,20 @@ export default function About() {
                     />
                 </div>
 
-                {/* Right column: existing About text */}
                 <div className={styles.aboutText}>
-                    <p>
-                        I am a Data Scientist and Machine Learning Engineer with more than two years of applied
-                        research experience. My work spans Generative AI, RAG pipelines, Knowledge Graphs,
-                        Multi Objective Optimization, and full stack ML systems. I have contributed to impactful
-                        projects at Mercedes Benz USA, Dell Technologies, Shepherd Center, and JNTUH.
-                    </p>
+                    <p>Your existing about text here.</p>
 
-                    <p>
-                        I enjoy building intelligent systems that reduce manual effort, improve decision making,
-                        and deliver measurable business and clinical value. My technical strengths include Python,
-                        LangChain, PyTorch, XGBoost, cloud platforms, and scalable ML architecture.
-                    </p>
+                    <ul className={styles.socialList} aria-label="Social links">
+                        <li className={styles.socialItem}>
+                            <a href="mailto:your.email@gmail.com" className={styles.socialLink}>Email</a>
+                        </li>
+                        <li className={styles.socialItem}>
+                            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>GitHub</a>
+                        </li>
+                        <li className={styles.socialItem}>
+                            <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>LinkedIn</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>

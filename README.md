@@ -55,14 +55,17 @@ portfolio/
 │   │   └── api/
 │   │       └── contact/
 │   │           └── route.js
+|
 │   ├── components/
 │   │   ├── Navbar.js
 │   │   ├── Footer.js
 │   │   ├── ProjectCard.js
 │   │   ├── ExperienceCard.js
 │   │   └── SectionHeader.js
+|   |
 │   └── styles/
 │       └── components.css
+|
 ├── package.json
 ├── next.config.js
 └── README.md

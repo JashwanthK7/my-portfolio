@@ -22,7 +22,7 @@
 }
 
 .aboutImage {
-    flex: 0 0 160px;
+    flex: 0 0 240px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,6 +49,37 @@
     margin: 0 0 20px 0;
 }
 
+/* Social Links - Horizontal Layout */
+.socialList {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0 0;
+}
+
+.socialItem {
+    display: flex;
+    align-items: center;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #3A6EA5;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.socialLink:hover {
+    opacity: 0.7;
+}
+
+.socialText {
+    font-size: 16px;
+}
+
 /* Mobile tweaks */
 @media (max-width: 640px) {
     .aboutFlex {
@@ -65,11 +96,11 @@
     }
 
     .aboutImage {
-        flex: 0 0 140px;
+        flex: 0 0 210px;
     }
 
     .aboutImage :global(img) {
-        width: 140px;
-        height: 140px;
+        width: 210px;
+        height: 210px;
     }
 }

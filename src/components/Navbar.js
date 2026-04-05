@@ -13,7 +13,7 @@ export default function Navbar() {
             zIndex: 50
         }}>
             <a href="/" style={{ fontSize: "20px", fontWeight: "700", color: "#1F3B57" }}>
-                Jashwanth
+                Home
             </a>
 
             <div style={{ display: "flex", gap: "24px" }}>

@@ -42,44 +42,48 @@ export default function ProjectCard({ project, currentFilter, onFilterClick, onC
                 <img
                     src={project.image}
                     alt={project.title}
-                    style={{ width: "100%", borderRadius: "10px", objectFit: "cover", height: "200px" }}
+                    style={{ width: "100%", borderRadius: "10px", objectFit: "cover", height: "200px", border: "1px solid var(--border-color)" }}
                 />
 
-                <h3 style={{ fontSize: "20px", fontWeight: "700", color: "#1F3B57" }}>
+                <h3 style={{ fontSize: "20px", fontWeight: "700", color: "var(--text-primary)" }}>
                     {project.title}
                 </h3>
 
-                <p style={{ fontSize: "14px", color: "#3A6EA5", fontWeight: "600", marginTop: "-8px" }}>
+                <p style={{ fontSize: "14px", color: "var(--accent-blue)", fontWeight: "600", marginTop: "-8px" }}>
                     {project.dates}
                 </p>
 
-                <p style={{ fontSize: "16px", lineHeight: "1.6", flexGrow: 1 }}>
+                <p style={{ fontSize: "16px", lineHeight: "1.6", flexGrow: 1, color: "var(--text-secondary)" }}>
                     {project.description}
                 </p>
 
                 {project.tech && (
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "auto", paddingTop: "16px" }}>
-                        {project.tech.map((tag, index) => (
-                            <span
-                                key={index}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    onFilterClick(tag);
-                                }}
-                                style={{
-                                    background: currentFilter === tag ? "#3A6EA5" : "#EBF4FF",
-                                    color: currentFilter === tag ? "white" : "#3A6EA5",
-                                    padding: "6px 12px",
-                                    borderRadius: "16px",
-                                    fontSize: "12px",
-                                    fontWeight: "600",
-                                    cursor: "pointer",
-                                    transition: "all 0.2s ease"
-                                }}
-                            >
-                                {tag}
-                            </span>
-                        ))}
+                        {project.tech.map((tag, index) => {
+                            const isActive = currentFilter === tag;
+                            return (
+                                <span
+                                    key={index}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        onFilterClick(tag);
+                                    }}
+                                    style={{
+                                        background: isActive ? "var(--text-primary)" : "var(--bg-color)",
+                                        color: isActive ? "var(--bg-color)" : "var(--accent-blue)",
+                                        border: isActive ? "1px solid var(--text-primary)" : "1px solid var(--border-color)",
+                                        padding: "6px 12px",
+                                        borderRadius: "16px",
+                                        fontSize: "12px",
+                                        fontWeight: "600",
+                                        cursor: "pointer",
+                                        transition: "all 0.2s ease"
+                                    }}
+                                >
+                                    {tag}
+                                </span>
+                            );
+                        })}
                     </div>
                 )}
             </div>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import ExperienceCard from "../../components/ExperienceCard";
 
 export default function Experience() {
+    // ... [KEEP YOUR EXISTING experience ARRAY DATA HERE EXACTLY AS IT IS] ...
     const experience = [
         {
             role: "Generative AI Developer | Graduate Research Assistant",
@@ -71,21 +72,20 @@ export default function Experience() {
     return (
         <section>
             <div style={{ marginBottom: "48px", maxWidth: "800px" }}>
-                <h2 style={{ fontSize: "36px", fontWeight: "800", color: "#1F3B57", letterSpacing: "-0.5px" }}>
+                <h2 style={{ fontSize: "36px", fontWeight: "800", color: "var(--text-primary)", letterSpacing: "-0.5px" }}>
                     Experience
                 </h2>
-                <p style={{ marginTop: "16px", fontSize: "18px", color: "#4A5568", lineHeight: "1.7" }}>
+                <p style={{ marginTop: "16px", fontSize: "18px", color: "var(--text-secondary)", lineHeight: "1.7" }}>
                     My professional journey includes applied research and engineering roles where I have developed scalable machine learning solutions, generative AI pipelines, and data driven systems for enterprise and healthcare sectors.
                     Click any role to view the project details.
                 </p>
             </div>
 
             <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-                {/* Timeline Container */}
                 <div style={{
                     position: "relative",
                     paddingLeft: "40px",
-                    borderLeft: "3px solid #E2E8F0",
+                    borderLeft: "3px solid var(--border-color)",
                     marginLeft: "12px",
                     display: "flex",
                     flexDirection: "column",
@@ -93,17 +93,16 @@ export default function Experience() {
                 }}>
                     {experience.map((exp, i) => (
                         <div key={i} style={{ position: "relative" }}>
-                            {/* Timeline Dot */}
                             <div style={{
                                 position: "absolute",
-                                left: "-49.5px", // Aligns exactly with the 3px border
+                                left: "-49.5px",
                                 top: "28px",
                                 width: "16px",
                                 height: "16px",
-                                background: "#3A6EA5",
+                                background: "var(--accent-blue)",
                                 borderRadius: "50%",
-                                border: "3px solid white",
-                                boxShadow: "0 0 0 4px #EBF4FF"
+                                border: "3px solid var(--card-bg)",
+                                boxShadow: "0 0 0 4px var(--border-color)"
                             }} />
 
                             <ExperienceCard
@@ -115,12 +114,11 @@ export default function Experience() {
                 </div>
             </div>
 
-            {/* Modal Overlay */}
             {selectedExp && (
                 <div
                     style={{
                         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-                        background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(4px)",
+                        background: "rgba(11, 17, 32, 0.8)", backdropFilter: "blur(4px)",
                         display: "flex", justifyContent: "center", alignItems: "center",
                         zIndex: 100, padding: "20px"
                     }}
@@ -128,21 +126,21 @@ export default function Experience() {
                 >
                     <div
                         style={{
-                            background: "white", borderRadius: "16px", maxWidth: "800px", width: "100%",
+                            background: "var(--card-bg)", borderRadius: "16px", maxWidth: "800px", width: "100%",
                             maxHeight: "90vh", overflowY: "auto", padding: "40px", position: "relative",
-                            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                            border: "1px solid var(--border-color)", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
                         }}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
                             onClick={() => setSelectedExp(null)}
                             style={{
-                                position: "absolute", top: "24px", right: "24px", background: "#F1F5F9", border: "none",
+                                position: "absolute", top: "24px", right: "24px", background: "var(--bg-color)", border: "1px solid var(--border-color)",
                                 width: "40px", height: "40px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
-                                fontSize: "18px", cursor: "pointer", color: "#475569", transition: "background 0.2s"
+                                fontSize: "18px", cursor: "pointer", color: "var(--text-primary)", transition: "background 0.2s"
                             }}
-                            onMouseOver={(e) => e.currentTarget.style.background = "#E2E8F0"}
-                            onMouseOut={(e) => e.currentTarget.style.background = "#F1F5F9"}
+                            onMouseOver={(e) => e.currentTarget.style.background = "var(--border-color)"}
+                            onMouseOut={(e) => e.currentTarget.style.background = "var(--bg-color)"}
                         >
                             ✕
                         </button>
@@ -150,32 +148,32 @@ export default function Experience() {
                         <img
                             src={selectedExp.image}
                             alt={selectedExp.org}
-                            style={{ width: "100%", borderRadius: "12px", height: "300px", objectFit: "cover", marginBottom: "32px", border: "1px solid #E2E8F0" }}
+                            style={{ width: "100%", borderRadius: "12px", height: "300px", objectFit: "cover", marginBottom: "32px", border: "1px solid var(--border-color)" }}
                         />
 
-                        <h2 style={{ fontSize: "32px", color: "#1F3B57", marginBottom: "8px", fontWeight: "800", letterSpacing: "-0.5px" }}>
+                        <h2 style={{ fontSize: "32px", color: "var(--text-primary)", marginBottom: "8px", fontWeight: "800", letterSpacing: "-0.5px" }}>
                             {selectedExp.role}
                         </h2>
 
-                        <p style={{ color: "#3A6EA5", fontSize: "18px", fontWeight: "600", marginBottom: "24px" }}>
+                        <p style={{ color: "var(--accent-blue)", fontSize: "18px", fontWeight: "600", marginBottom: "24px" }}>
                             {selectedExp.org} | {selectedExp.dates}
                         </p>
 
                         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "32px" }}>
                             {selectedExp.skills.map((skill, i) => (
-                                <span key={i} style={{ background: "#F1F5F9", color: "#475569", padding: "8px 16px", borderRadius: "20px", fontSize: "13px", fontWeight: "700" }}>
+                                <span key={i} style={{ background: "var(--bg-color)", color: "var(--text-primary)", border: "1px solid var(--border-color)", padding: "8px 16px", borderRadius: "20px", fontSize: "13px", fontWeight: "700" }}>
                                     {skill}
                                 </span>
                             ))}
                         </div>
 
-                        <h3 style={{ fontSize: "22px", color: "#1F3B57", marginBottom: "16px", fontWeight: "700" }}>Overview</h3>
-                        <p style={{ fontSize: "17px", lineHeight: "1.8", color: "#475569", marginBottom: "32px" }}>
+                        <h3 style={{ fontSize: "22px", color: "var(--text-primary)", marginBottom: "16px", fontWeight: "700" }}>Overview</h3>
+                        <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--text-secondary)", marginBottom: "32px" }}>
                             {selectedExp.description}
                         </p>
 
-                        <h3 style={{ fontSize: "22px", color: "#1F3B57", marginBottom: "16px", fontWeight: "700" }}>Key Contributions</h3>
-                        <ul style={{ fontSize: "17px", lineHeight: "1.8", color: "#475569", paddingLeft: "24px", marginBottom: "40px" }}>
+                        <h3 style={{ fontSize: "22px", color: "var(--text-primary)", marginBottom: "16px", fontWeight: "700" }}>Key Contributions</h3>
+                        <ul style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--text-secondary)", paddingLeft: "24px", marginBottom: "40px" }}>
                             {selectedExp.details.map((detail, idx) => (
                                 <li key={idx} style={{ marginBottom: "12px" }}>{detail}</li>
                             ))}
@@ -187,12 +185,12 @@ export default function Experience() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
-                                    display: "inline-block", background: "#1F3B57", color: "white", padding: "14px 28px",
+                                    display: "inline-block", background: "var(--text-primary)", color: "var(--bg-color)", padding: "14px 28px",
                                     borderRadius: "8px", fontSize: "16px", fontWeight: "600", textDecoration: "none", transition: "transform 0.2s ease, box-shadow 0.2s ease"
                                 }}
                                 onMouseOver={(e) => {
                                     e.currentTarget.style.transform = "translateY(-2px)";
-                                    e.currentTarget.style.boxShadow = "0 10px 15px -3px rgba(31, 59, 87, 0.3)";
+                                    e.currentTarget.style.boxShadow = "0 10px 15px -3px rgba(0, 0, 0, 0.3)";
                                 }}
                                 onMouseOut={(e) => {
                                     e.currentTarget.style.transform = "translateY(0)";

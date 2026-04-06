@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
     const [isVisible, setIsVisible] = useState(false);
@@ -40,7 +41,7 @@ export default function Home() {
                 }
                 .cursor {
                     animation: blink 1s step-end infinite;
-                    color: #3A6EA5;
+                    color: var(--accent-blue);
                     font-weight: 300;
                 }
                 @keyframes marquee {
@@ -81,12 +82,12 @@ export default function Home() {
                     <h1 style={{
                         fontSize: "56px",
                         fontWeight: "800",
-                        color: "#1F3B57",
+                        color: "var(--text-primary)", /* Fixed */
                         letterSpacing: "-1px",
                         lineHeight: "1.1",
                         margin: 0
                     }}>
-                        Hi, I am <span style={{ color: "#3A6EA5" }}>{typedName}</span><span className="cursor">|</span>
+                        Hi, I am <span style={{ color: "var(--accent-blue)" }}>{typedName}</span><span className="cursor">|</span>
                     </h1>
 
                     <div style={{
@@ -98,18 +99,18 @@ export default function Home() {
                             marginTop: "24px",
                             fontSize: "28px",
                             fontWeight: "600",
-                            color: "#475569",
+                            color: "var(--text-secondary)", /* Fixed */
                             maxWidth: "800px",
                             lineHeight: "1.4"
                         }}>
                             Algorithms are the engine, but clean data is the fuel.<br />
-                            <span style={{ color: "#3A6EA5" }}>I build the engine and refine the fuel.</span>
+                            <span style={{ color: "var(--accent-blue)" }}>I build the engine and refine the fuel.</span>
                         </h2>
 
                         <p style={{
                             marginTop: "24px",
                             fontSize: "20px",
-                            color: "#64748b",
+                            color: "var(--text-secondary)", /* Fixed */
                             maxWidth: "600px",
                             lineHeight: "1.6"
                         }}>
@@ -117,42 +118,42 @@ export default function Home() {
                         </p>
 
                         <div style={{ marginTop: "48px", display: "flex", gap: "20px", flexWrap: "wrap" }}>
-                            <a href="/projects" style={{
+                            <Link href="/projects" style={{
                                 padding: "16px 32px",
-                                background: "#1F3B57",
-                                color: "white",
+                                background: "var(--text-primary)", /* Fixed */
+                                color: "var(--bg-color)", /* Fixed */
                                 borderRadius: "8px",
                                 fontWeight: "600",
                                 textDecoration: "none",
-                                boxShadow: "0 4px 14px 0 rgba(31,59,87,0.39)",
+                                boxShadow: "0 4px 14px 0 rgba(0,0,0,0.2)",
                                 transition: "all 0.2s ease"
                             }}
                                 onMouseOver={(e) => e.currentTarget.style.transform = "translateY(-2px)"}
                                 onMouseOut={(e) => e.currentTarget.style.transform = "translateY(0)"}
                             >
                                 View Projects
-                            </a>
-                            <a href="/about" style={{
+                            </Link>
+                            <Link href="/about" style={{
                                 padding: "16px 32px",
-                                background: "white",
-                                color: "#1F3B57",
-                                border: "2px solid #E2E8F0",
+                                background: "var(--card-bg)",
+                                color: "var(--text-primary)",
+                                border: "2px solid var(--border-color)",
                                 borderRadius: "8px",
                                 fontWeight: "600",
                                 textDecoration: "none",
                                 transition: "all 0.2s ease"
                             }}
                                 onMouseOver={(e) => {
-                                    e.currentTarget.style.borderColor = "#1F3B57";
+                                    e.currentTarget.style.borderColor = "var(--text-primary)";
                                     e.currentTarget.style.transform = "translateY(-2px)";
                                 }}
                                 onMouseOut={(e) => {
-                                    e.currentTarget.style.borderColor = "#E2E8F0";
+                                    e.currentTarget.style.borderColor = "var(--border-color)";
                                     e.currentTarget.style.transform = "translateY(0)";
                                 }}
                             >
                                 About Me
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -173,7 +174,7 @@ export default function Home() {
                             left: "-20px",
                             width: "100%",
                             height: "100%",
-                            border: "3px solid #EBF4FF",
+                            border: "3px solid var(--border-color)", /* Adapts nicely now */
                             borderRadius: "24px",
                             zIndex: -1
                         }} />
@@ -184,7 +185,7 @@ export default function Home() {
                                 width: "100%",
                                 maxWidth: "420px",
                                 borderRadius: "24px",
-                                boxShadow: "0 25px 50px -12px rgba(31, 59, 87, 0.25)",
+                                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                                 objectFit: "cover",
                                 aspectRatio: "4/5"
                             }}
@@ -197,15 +198,16 @@ export default function Home() {
             <div style={{
                 marginTop: "60px",
                 padding: "40px 0",
-                borderTop: "1px solid #E2E8F0",
-                borderBottom: "1px solid #E2E8F0",
-                background: "rgba(248, 250, 252, 0.5)",
+                borderTop: "1px solid var(--border-color)",
+                borderBottom: "1px solid var(--border-color)",
+                background: "var(--card-bg)",
                 width: "100vw",
                 position: "relative",
                 left: "50%",
                 right: "50%",
                 marginLeft: "-50vw",
-                marginRight: "-50vw"
+                marginRight: "-50vw",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.05)"
             }}>
                 <div style={{
                     display: "flex",
@@ -220,14 +222,14 @@ export default function Home() {
                             margin: "0 40px",
                             fontSize: "24px",
                             fontWeight: "700",
-                            color: "#94A3B8"
+                            color: "var(--text-primary)"
                         }}>
                             {tech}
                             <span style={{
                                 display: "inline-block",
                                 width: "8px",
                                 height: "8px",
-                                background: "#CBD5E1",
+                                background: "var(--accent-blue)",
                                 borderRadius: "50%",
                                 marginLeft: "80px"
                             }} />

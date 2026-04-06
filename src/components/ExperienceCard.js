@@ -34,44 +34,44 @@ export default function ExperienceCard({ exp, onCardClick }) {
                 onClick={onCardClick}
                 onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-4px)";
-                    e.currentTarget.style.boxShadow = "0 12px 24px -8px rgba(58, 110, 165, 0.2)";
-                    e.currentTarget.style.borderColor = "#3A6EA5";
+                    e.currentTarget.style.boxShadow = "0 12px 24px -8px rgba(0, 0, 0, 0.2)";
+                    e.currentTarget.style.borderColor = "var(--accent-blue)";
                 }}
                 onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "translateY(0)";
                     e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.05)";
-                    e.currentTarget.style.borderColor = "#E2E8F0";
+                    e.currentTarget.style.borderColor = "var(--border-color)";
                 }}
                 style={{
                     display: "flex", flexDirection: "column", gap: "12px", cursor: "pointer",
-                    padding: "24px", borderRadius: "12px", background: "white",
-                    border: "1px solid #E2E8F0", boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
+                    padding: "24px", borderRadius: "12px", background: "var(--card-bg)",
+                    border: "1px solid var(--border-color)", boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
                 }}
             >
-                <h3 style={{ fontSize: "22px", fontWeight: "700", color: "#1F3B57", margin: 0 }}>
+                <h3 style={{ fontSize: "22px", fontWeight: "700", color: "var(--text-primary)", margin: 0 }}>
                     {exp.role}
                 </h3>
 
-                <p style={{ fontSize: "16px", fontWeight: "600", color: "#475569", margin: 0 }}>
+                <p style={{ fontSize: "16px", fontWeight: "600", color: "var(--text-secondary)", margin: 0 }}>
                     {exp.org}
                 </p>
 
-                <div style={{ display: "inline-block", background: "#EBF4FF", color: "#3A6EA5", padding: "4px 12px", borderRadius: "16px", fontSize: "13px", fontWeight: "700", width: "fit-content", marginTop: "4px" }}>
+                <div style={{ display: "inline-block", background: "var(--bg-color)", border: "1px solid var(--border-color)", color: "var(--accent-blue)", padding: "4px 12px", borderRadius: "16px", fontSize: "13px", fontWeight: "700", width: "fit-content", marginTop: "4px" }}>
                     {exp.dates}
                 </div>
 
-                <p style={{ fontSize: "16px", lineHeight: "1.7", color: "#475569", marginTop: "8px", marginBottom: "0" }}>
+                <p style={{ fontSize: "16px", lineHeight: "1.7", color: "var(--text-secondary)", marginTop: "8px", marginBottom: "0" }}>
                     {exp.description}
                 </p>
 
                 {exp.skills && (
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #E2E8F0" }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed var(--border-color)" }}>
                         {exp.skills.map((skill, index) => (
                             <span
                                 key={index}
                                 style={{
-                                    color: "#64748b",
+                                    color: "var(--text-secondary)",
                                     fontSize: "13px",
                                     fontWeight: "600"
                                 }}

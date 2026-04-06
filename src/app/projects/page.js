@@ -3,6 +3,7 @@ import { useState } from "react";
 import ProjectCard from "../../components/ProjectCard";
 
 export default function Projects() {
+    // ... [KEEP YOUR EXISTING projects ARRAY DATA HERE EXACTLY AS IT IS] ...
     const projects = [
         {
             title: "Dataset Recommender System",
@@ -74,34 +75,37 @@ export default function Projects() {
     return (
         <section>
             <div style={{ marginBottom: "40px", maxWidth: "800px" }}>
-                <h2 style={{ fontSize: "32px", fontWeight: "700", color: "#1F3B57" }}>
+                <h2 style={{ fontSize: "32px", fontWeight: "700", color: "var(--text-primary)" }}>
                     Featured Projects
                 </h2>
-                <p style={{ marginTop: "16px", fontSize: "18px", color: "#4A5568", lineHeight: "1.6" }}>
+                <p style={{ marginTop: "16px", fontSize: "18px", color: "var(--text-secondary)", lineHeight: "1.6" }}>
                     A collection of my independent work spanning Generative AI, RAG architectures, and traditional Machine Learning.
                     Click any category to filter the projects, or click a project card to view more details.
                 </p>
             </div>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "32px" }}>
-                {topFilters.map((f, i) => (
-                    <button
-                        key={i}
-                        onClick={() => setFilter(f)}
-                        style={{
-                            padding: "8px 16px",
-                            borderRadius: "20px",
-                            border: "none",
-                            background: filter === f || (filter !== "All" && !topFilters.includes(filter) && f === "All") ? "#1F3B57" : "#E2E8F0",
-                            color: filter === f || (filter !== "All" && !topFilters.includes(filter) && f === "All") ? "white" : "#475569",
-                            fontWeight: "600",
-                            cursor: "pointer",
-                            transition: "all 0.2s ease"
-                        }}
-                    >
-                        {f}
-                    </button>
-                ))}
+                {topFilters.map((f, i) => {
+                    const isActive = filter === f || (filter !== "All" && !topFilters.includes(filter) && f === "All");
+                    return (
+                        <button
+                            key={i}
+                            onClick={() => setFilter(f)}
+                            style={{
+                                padding: "8px 16px",
+                                borderRadius: "20px",
+                                border: isActive ? "1px solid var(--text-primary)" : "1px solid var(--border-color)",
+                                background: isActive ? "var(--text-primary)" : "var(--card-bg)",
+                                color: isActive ? "var(--bg-color)" : "var(--text-primary)",
+                                fontWeight: "600",
+                                cursor: "pointer",
+                                transition: "all 0.2s ease"
+                            }}
+                        >
+                            {f}
+                        </button>
+                    )
+                })}
             </div>
 
             <div style={{
@@ -124,15 +128,16 @@ export default function Projects() {
                 <div
                     style={{
                         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-                        background: "rgba(0,0,0,0.6)", display: "flex", justifyContent: "center", alignItems: "center",
+                        background: "rgba(11, 17, 32, 0.8)", display: "flex", justifyContent: "center", alignItems: "center",
                         zIndex: 100, padding: "20px"
                     }}
                     onClick={() => setSelectedProject(null)}
                 >
                     <div
                         style={{
-                            background: "white", borderRadius: "12px", maxWidth: "800px", width: "100%",
-                            maxHeight: "90vh", overflowY: "auto", padding: "32px", position: "relative"
+                            background: "var(--card-bg)", borderRadius: "12px", maxWidth: "800px", width: "100%",
+                            maxHeight: "90vh", overflowY: "auto", padding: "32px", position: "relative",
+                            border: "1px solid var(--border-color)"
                         }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -140,7 +145,7 @@ export default function Projects() {
                             onClick={() => setSelectedProject(null)}
                             style={{
                                 position: "absolute", top: "20px", right: "24px", background: "none", border: "none",
-                                fontSize: "24px", cursor: "pointer", color: "#64748b"
+                                fontSize: "24px", cursor: "pointer", color: "var(--text-secondary)"
                             }}
                         >
                             ✕
@@ -149,32 +154,32 @@ export default function Projects() {
                         <img
                             src={selectedProject.image}
                             alt={selectedProject.title}
-                            style={{ width: "100%", borderRadius: "8px", height: "300px", objectFit: "cover", marginBottom: "24px", border: "1px solid #E2E8F0" }}
+                            style={{ width: "100%", borderRadius: "8px", height: "300px", objectFit: "cover", marginBottom: "24px", border: "1px solid var(--border-color)" }}
                         />
 
-                        <h2 style={{ fontSize: "28px", color: "#1F3B57", marginBottom: "8px", fontWeight: "700" }}>
+                        <h2 style={{ fontSize: "28px", color: "var(--text-primary)", marginBottom: "8px", fontWeight: "700" }}>
                             {selectedProject.title}
                         </h2>
 
-                        <p style={{ color: "#3A6EA5", fontWeight: "600", marginBottom: "16px" }}>
+                        <p style={{ color: "var(--accent-blue)", fontWeight: "600", marginBottom: "16px" }}>
                             {selectedProject.dates} | {selectedProject.category}
                         </p>
 
                         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "24px" }}>
                             {selectedProject.tech.map((tag, i) => (
-                                <span key={i} style={{ background: "#EBF4FF", color: "#3A6EA5", padding: "6px 12px", borderRadius: "16px", fontSize: "12px", fontWeight: "600" }}>
+                                <span key={i} style={{ background: "var(--bg-color)", color: "var(--accent-blue)", border: "1px solid var(--border-color)", padding: "6px 12px", borderRadius: "16px", fontSize: "12px", fontWeight: "600" }}>
                                     {tag}
                                 </span>
                             ))}
                         </div>
 
-                        <h3 style={{ fontSize: "20px", color: "#1F3B57", marginBottom: "12px", fontWeight: "700" }}>Overview</h3>
-                        <p style={{ fontSize: "16px", lineHeight: "1.7", color: "#475569", marginBottom: "24px" }}>
+                        <h3 style={{ fontSize: "20px", color: "var(--text-primary)", marginBottom: "12px", fontWeight: "700" }}>Overview</h3>
+                        <p style={{ fontSize: "16px", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "24px" }}>
                             {selectedProject.description}
                         </p>
 
-                        <h3 style={{ fontSize: "20px", color: "#1F3B57", marginBottom: "12px", fontWeight: "700" }}>Key Contributions</h3>
-                        <ul style={{ fontSize: "16px", lineHeight: "1.7", color: "#475569", paddingLeft: "20px", marginBottom: "32px" }}>
+                        <h3 style={{ fontSize: "20px", color: "var(--text-primary)", marginBottom: "12px", fontWeight: "700" }}>Key Contributions</h3>
+                        <ul style={{ fontSize: "16px", lineHeight: "1.7", color: "var(--text-secondary)", paddingLeft: "20px", marginBottom: "32px" }}>
                             {selectedProject.details.map((detail, idx) => (
                                 <li key={idx} style={{ marginBottom: "10px" }}>{detail}</li>
                             ))}
@@ -186,7 +191,7 @@ export default function Projects() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
-                                    display: "inline-block", background: "#1F3B57", color: "white", padding: "12px 24px",
+                                    display: "inline-block", background: "var(--text-primary)", color: "var(--bg-color)", padding: "12px 24px",
                                     borderRadius: "8px", fontWeight: "600", textDecoration: "none", transition: "opacity 0.2s ease"
                                 }}
                                 onMouseOver={(e) => e.target.style.opacity = 0.8}

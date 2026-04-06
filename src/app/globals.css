@@ -1,4 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap);
+
+:root {
+    --bg-color: #F8FAFC;
+    --text-primary: #1F3B57;
+    --text-secondary: #475569;
+    --card-bg: #ffffff;
+    --border-color: #E2E8F0;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --accent-blue: #3A6EA5;
+}
+
+[data-theme=dark] {
+    --bg-color: #0B1120;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E2E8F0;
+    --card-bg: #1E293B;
+    --border-color: #334155;
+    --nav-bg: rgba(11, 17, 32, 0.8);
+    --accent-blue: #60A5FA;
+}
 
 * {
     margin: 0;
@@ -8,29 +28,20 @@
 
 body {
     font-family: Inter, sans-serif;
-    background: #F5F7FA;
-    color: #1A1A1A;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-section {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: auto;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
 }
 
 .card {
-    background: white;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
+    border-color: var(--accent-blue);
 }

@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
                         <Link href="/" style={{ fontSize: "20px", fontWeight: "800", color: "var(--text-primary)", textDecoration: "none", letterSpacing: "-0.5px" }}>
                             JK.
                         </Link>
-                        <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
+                        <div style={{ display: "flex", gap: "24px", alignItems: "center", flexWrap: "wrap", justifyContent: "center" }}>
                             <Link href="/" style={{ textDecoration: "none", color: "var(--text-secondary)", fontWeight: "600", fontSize: "15px" }}>Home</Link>
                             <Link href="/experience" style={{ textDecoration: "none", color: "var(--text-secondary)", fontWeight: "600", fontSize: "15px" }}>Experience</Link>
                             <Link href="/projects" style={{ textDecoration: "none", color: "var(--text-secondary)", fontWeight: "600", fontSize: "15px" }}>Projects</Link>

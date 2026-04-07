@@ -1,9 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProjectCard from "../../components/ProjectCard";
 
 export default function Projects() {
-    // ... [KEEP YOUR EXISTING projects ARRAY DATA HERE EXACTLY AS IT IS] ...
     const projects = [
         {
             title: "Dataset Recommender System",
@@ -65,6 +64,17 @@ export default function Projects() {
 
     const [filter, setFilter] = useState("All");
     const [selectedProject, setSelectedProject] = useState(null);
+
+    useEffect(() => {
+        if (selectedProject) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [selectedProject]);
 
     const topFilters = ["All", "Generative AI", "Deep Learning & NLP", "Traditional ML"];
 
@@ -129,7 +139,7 @@ export default function Projects() {
                     style={{
                         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
                         background: "rgba(11, 17, 32, 0.8)", display: "flex", justifyContent: "center", alignItems: "center",
-                        zIndex: 100, padding: "20px"
+                        zIndex: 9999, padding: "20px"
                     }}
                     onClick={() => setSelectedProject(null)}
                 >
@@ -148,7 +158,7 @@ export default function Projects() {
                                 fontSize: "24px", cursor: "pointer", color: "var(--text-secondary)"
                             }}
                         >
-                            ✕
+                            X
                         </button>
 
                         <img

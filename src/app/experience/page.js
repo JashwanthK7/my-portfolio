@@ -1,9 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ExperienceCard from "../../components/ExperienceCard";
 
 export default function Experience() {
-    // ... [KEEP YOUR EXISTING experience ARRAY DATA HERE EXACTLY AS IT IS] ...
     const experience = [
         {
             role: "Generative AI Developer | Graduate Research Assistant",
@@ -69,6 +68,17 @@ export default function Experience() {
 
     const [selectedExp, setSelectedExp] = useState(null);
 
+    useEffect(() => {
+        if (selectedExp) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [selectedExp]);
+
     return (
         <section>
             <div style={{ marginBottom: "48px", maxWidth: "800px" }}>
@@ -120,7 +130,7 @@ export default function Experience() {
                         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
                         background: "rgba(11, 17, 32, 0.8)", backdropFilter: "blur(4px)",
                         display: "flex", justifyContent: "center", alignItems: "center",
-                        zIndex: 100, padding: "20px"
+                        zIndex: 9999, padding: "20px"
                     }}
                     onClick={() => setSelectedExp(null)}
                 >
@@ -142,7 +152,7 @@ export default function Experience() {
                             onMouseOver={(e) => e.currentTarget.style.background = "var(--border-color)"}
                             onMouseOut={(e) => e.currentTarget.style.background = "var(--bg-color)"}
                         >
-                            ✕
+                            X
                         </button>
 
                         <img

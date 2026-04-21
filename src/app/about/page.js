@@ -54,7 +54,7 @@ export default function About() {
                     Education
                 </h2>
                 <div style={{ background: "var(--card-bg)", padding: "28px", borderRadius: "12px", border: "1px solid var(--border-color)", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-start", gap: "16px" }}>
-                    <div>
+                    <div style={{ flex: "1 1 300px", minWidth: 0 }}>
                         <h3 style={{ fontSize: "20px", fontWeight: "700", color: "var(--text-primary)", marginBottom: "6px" }}>
                             Master of Science in Data Science and Analytics
                         </h3>
@@ -65,24 +65,24 @@ export default function About() {
                             Atlanta, GA
                         </p>
                     </div>
-                    <div style={{ background: "var(--bg-color)", border: "1px solid var(--border-color)", color: "var(--accent-blue)", padding: "6px 16px", borderRadius: "20px", fontSize: "14px", fontWeight: "700", whiteSpace: "nowrap" }}>
+                    <div style={{ flexShrink: 0, background: "var(--bg-color)", border: "1px solid var(--border-color)", color: "var(--accent-blue)", padding: "6px 16px", borderRadius: "20px", fontSize: "14px", fontWeight: "700", whiteSpace: "nowrap" }}>
                         Graduated: Dec 2025
                     </div>
                 </div>
 
                 <div style={{ background: "var(--card-bg)", padding: "28px", borderRadius: "12px", border: "1px solid var(--border-color)", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-start", gap: "16px", marginTop: "16px" }}>
-                    <div>
+                    <div style={{ flex: "1 1 300px", minWidth: 0 }}>
                         <h3 style={{ fontSize: "20px", fontWeight: "700", color: "var(--text-primary)", marginBottom: "6px" }}>
                             Bachelor of Technology in Electronics and Communication Engineering
                         </h3>
                         <p style={{ fontSize: "16px", color: "var(--accent-blue)", fontWeight: "600", marginBottom: "4px" }}>
-                            Jawaharlal Nehru Technological University College of Engineering
+                            Jawaharlal Nehru Technological University College of Engineering Hyderabad (JNTUHCEH)
                         </p>
                         <p style={{ fontSize: "15px", color: "var(--text-secondary)", fontWeight: "500" }}>
                             Hyderabad, India
                         </p>
                     </div>
-                    <div style={{ background: "var(--bg-color)", border: "1px solid var(--border-color)", color: "var(--accent-blue)", padding: "6px 16px", borderRadius: "20px", fontSize: "14px", fontWeight: "700", whiteSpace: "nowrap" }}>
+                    <div style={{ flexShrink: 0, background: "var(--bg-color)", border: "1px solid var(--border-color)", color: "var(--accent-blue)", padding: "6px 16px", borderRadius: "20px", fontSize: "14px", fontWeight: "700", whiteSpace: "nowrap" }}>
                         Graduated: May 2024
                     </div>
                 </div>

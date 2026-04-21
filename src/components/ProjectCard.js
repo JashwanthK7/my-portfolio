@@ -49,9 +49,19 @@ export default function ProjectCard({ project, currentFilter, onFilterClick, onC
                     {project.title}
                 </h3>
 
-                <p style={{ fontSize: "14px", color: "var(--accent-blue)", fontWeight: "600", marginTop: "-8px" }}>
-                    {project.dates}
-                </p>
+                {project.impact && (
+                    <p style={{
+                        fontSize: "13px",
+                        color: "var(--accent-blue)",
+                        fontWeight: "600",
+                        marginTop: "-8px",
+                        lineHeight: "1.5",
+                        borderLeft: "3px solid var(--accent-blue)",
+                        paddingLeft: "10px"
+                    }}>
+                        {project.impact}
+                    </p>
+                )}
 
                 <p style={{ fontSize: "16px", lineHeight: "1.6", flexGrow: 1, color: "var(--text-secondary)" }}>
                     {project.description}
@@ -69,9 +79,9 @@ export default function ProjectCard({ project, currentFilter, onFilterClick, onC
                                         onFilterClick(tag);
                                     }}
                                     style={{
-                                        background: isActive ? "var(--text-primary)" : "var(--bg-color)",
-                                        color: isActive ? "var(--bg-color)" : "var(--accent-blue)",
-                                        border: isActive ? "1px solid var(--text-primary)" : "1px solid var(--border-color)",
+                                        background: isActive ? "var(--accent-blue)" : "var(--bg-color)",
+                                        color: isActive ? "#ffffff" : "var(--accent-blue)",
+                                        border: isActive ? "1px solid var(--accent-blue)" : "1px solid var(--border-color)",
                                         padding: "6px 12px",
                                         borderRadius: "16px",
                                         fontSize: "12px",

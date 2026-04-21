@@ -6,36 +6,36 @@ export default function Projects() {
     const projects = [
         {
             title: "Dataset Recommender System",
-            dates: "Mar 2026 to April 2026",
-            description: "Machine learning pipeline designed to retrieve, score, and rank open source datasets from multiple repositories concurrently.",
+            impact: "Semantic search across Kaggle, Hugging Face, and Data.gov with LLM-generated justifications",
+            description: "Machine learning pipeline designed to retrieve, score, and rank open source datasets from multiple repositories concurrently using semantic search and an LLM scoring layer.",
             image: "/images/projects/dataset_recommender.png",
             category: "Deep Learning & NLP",
             github: "https://github.com/JashwanthK7/Dataset-Recommender",
             tech: ["Python", "FAISS", "Hugging Face", "Gradio", "Podman"],
             details: [
-                "Built an asynchronous retrieval pipeline fetching from Kaggle, Hugging Face, and Data.gov.",
-                "Implemented semantic search using all-MiniLM-L6-v2 and FAISS to normalize vector distances.",
-                "Integrated Qwen2.5-7B-Instruct LLM to evaluate contextual relevance and generate custom justifications."
+                "Built an asynchronous retrieval pipeline fetching datasets concurrently from Kaggle, Hugging Face, and Data.gov.",
+                "Implemented semantic search using all-MiniLM-L6-v2 embeddings and FAISS to normalize and rank vector distances.",
+                "Integrated Qwen2.5-7B-Instruct LLM to evaluate contextual relevance and generate custom justifications for each recommendation."
             ]
         },
         {
             title: "CalcFlow: Smart Calculus Coach",
-            dates: "Aug 2025 to Dec 2025",
-            description: "Full stack generative AI application with symbolic verification using SymPy, local LLMs via Ollama, and interactive Graph Lab visualizations.",
+            impact: "Local LLM-powered Socratic tutor with symbolic verification and zero external API costs",
+            description: "Full stack generative AI application with symbolic verification using SymPy, local LLMs via Ollama, and interactive Graph Lab visualizations for adaptive calculus tutoring.",
             image: "/images/projects/calcflow.png",
             category: "Generative AI",
             github: "https://github.com/JashwanthK7/Calc-Flow",
             tech: ["Python", "SymPy", "Ollama", "Streamlit", "PostgreSQL"],
             details: [
                 "Deployed local LLMs (Llama3/Mistral) via Ollama for Socratic style calculus tutoring without external API costs.",
-                "Implemented Python (sympy) for mathematical verification and auto grading of adaptive quizzes.",
-                "Built an interactive Streamlit UI with PostgreSQL integration for persistent chat logs and history."
+                "Implemented SymPy for symbolic mathematical verification and auto-grading of adaptive quizzes.",
+                "Built an interactive Streamlit UI with PostgreSQL integration for persistent chat logs and session history."
             ]
         },
         {
             title: "EduMentor: AI Powered Adaptive Learning Platform",
-            dates: "Feb 2025 to May 2025",
-            description: "Adaptive learning system with GPT powered quiz generation, personalized learning paths, and interactive knowledge graphs.",
+            impact: "GPT-4 powered adaptive quizzes with personalized learning paths and interactive knowledge graphs",
+            description: "Adaptive learning system with GPT powered quiz generation, personalized learning paths, and interactive knowledge graphs that map concept prerequisites for each learner.",
             image: "/images/projects/edumentor.png",
             category: "Generative AI",
             github: "https://github.com/JashwanthK7/EduMentor",
@@ -48,16 +48,16 @@ export default function Projects() {
         },
         {
             title: "Credit Card Fraud Detection",
-            dates: "Mar 2025 to May 2025",
-            description: "Machine learning pipeline focused on detecting fraudulent credit card transactions using a highly imbalanced dataset.",
+            impact: "Achieved F1-Score of 0.89 using XGBoost on a highly imbalanced transaction dataset",
+            description: "Machine learning pipeline focused on detecting fraudulent credit card transactions using ensemble models, class imbalance handling, and systematic hyperparameter tuning.",
             image: "/images/projects/credit_card_fraud.png",
             category: "Traditional ML",
             github: "https://github.com/JashwanthK7/Credit-Card-Fraud-Detection",
             tech: ["Python", "XGBoost", "Scikit-learn", "Pandas"],
             details: [
-                "Trained and compared Logistic Regression, KNN, Naive Bayes, and XGBoost models.",
-                "Handled severe class imbalance and tuned hyperparameters using GridSearchCV.",
-                "Achieved an F1-Score of 0.89 using the optimal XGBoost model to minimize false positives."
+                "Trained and benchmarked Logistic Regression, KNN, Naive Bayes, and XGBoost models on imbalanced transaction data.",
+                "Handled severe class imbalance using SMOTE and tuned hyperparameters with GridSearchCV.",
+                "Achieved an F1-Score of 0.89 using the optimal XGBoost model, minimizing false positives on fraud detection."
             ]
         }
     ];
@@ -104,9 +104,9 @@ export default function Projects() {
                             style={{
                                 padding: "8px 16px",
                                 borderRadius: "20px",
-                                border: isActive ? "1px solid var(--text-primary)" : "1px solid var(--border-color)",
-                                background: isActive ? "var(--text-primary)" : "var(--card-bg)",
-                                color: isActive ? "var(--bg-color)" : "var(--text-primary)",
+                                border: isActive ? "1px solid var(--accent-blue)" : "1px solid var(--border-color)",
+                                background: isActive ? "var(--accent-blue)" : "var(--card-bg)",
+                                color: isActive ? "#ffffff" : "var(--text-primary)",
                                 fontWeight: "600",
                                 cursor: "pointer",
                                 transition: "all 0.2s ease"
@@ -114,7 +114,7 @@ export default function Projects() {
                         >
                             {f}
                         </button>
-                    )
+                    );
                 })}
             </div>
 
@@ -138,7 +138,7 @@ export default function Projects() {
                 <div
                     style={{
                         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
-                        background: "rgba(11, 17, 32, 0.8)", display: "flex", justifyContent: "center", alignItems: "center",
+                        background: "rgba(11, 17, 32, 0.8)", backdropFilter: "blur(4px)", display: "flex", justifyContent: "center", alignItems: "center",
                         zIndex: 9999, padding: "20px"
                     }}
                     onClick={() => setSelectedProject(null)}
@@ -147,18 +147,25 @@ export default function Projects() {
                         style={{
                             background: "var(--card-bg)", borderRadius: "12px", maxWidth: "800px", width: "100%",
                             maxHeight: "90vh", overflowY: "auto", padding: "32px", position: "relative",
-                            border: "1px solid var(--border-color)"
+                            border: "1px solid var(--border-color)", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
                         }}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
                             onClick={() => setSelectedProject(null)}
                             style={{
-                                position: "absolute", top: "20px", right: "24px", background: "none", border: "none",
-                                fontSize: "24px", cursor: "pointer", color: "var(--text-secondary)"
+                                position: "fixed", top: "24px", right: "24px",
+                                background: "var(--card-bg)", border: "1px solid var(--border-color)",
+                                width: "44px", height: "44px", borderRadius: "50%",
+                                display: "flex", alignItems: "center", justifyContent: "center",
+                                fontSize: "18px", cursor: "pointer", color: "var(--text-primary)",
+                                transition: "background 0.2s", zIndex: 10000,
+                                boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
                             }}
+                            onMouseOver={(e) => e.currentTarget.style.background = "var(--border-color)"}
+                            onMouseOut={(e) => e.currentTarget.style.background = "var(--card-bg)"}
                         >
-                            X
+                            ✕
                         </button>
 
                         <img
@@ -172,7 +179,7 @@ export default function Projects() {
                         </h2>
 
                         <p style={{ color: "var(--accent-blue)", fontWeight: "600", marginBottom: "16px" }}>
-                            {selectedProject.dates} | {selectedProject.category}
+                            {selectedProject.category}
                         </p>
 
                         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "24px" }}>
@@ -201,11 +208,19 @@ export default function Projects() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
-                                    display: "inline-block", background: "var(--text-primary)", color: "var(--bg-color)", padding: "12px 24px",
-                                    borderRadius: "8px", fontWeight: "600", textDecoration: "none", transition: "opacity 0.2s ease"
+                                    display: "inline-block", background: "var(--accent-blue)", color: "#ffffff",
+                                    padding: "12px 24px", borderRadius: "8px", fontWeight: "600",
+                                    textDecoration: "none", transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                                    boxShadow: "0 4px 14px 0 rgba(58,110,165,0.3)"
                                 }}
-                                onMouseOver={(e) => e.target.style.opacity = 0.8}
-                                onMouseOut={(e) => e.target.style.opacity = 1}
+                                onMouseOver={(e) => {
+                                    e.currentTarget.style.transform = "translateY(-2px)";
+                                    e.currentTarget.style.boxShadow = "0 6px 20px 0 rgba(58,110,165,0.4)";
+                                }}
+                                onMouseOut={(e) => {
+                                    e.currentTarget.style.transform = "translateY(0)";
+                                    e.currentTarget.style.boxShadow = "0 4px 14px 0 rgba(58,110,165,0.3)";
+                                }}
                             >
                                 View on GitHub
                             </a>

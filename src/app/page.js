@@ -167,9 +167,6 @@ export default function Home() {
                         </p>
 
                         <div style={{ marginTop: "48px", display: "flex", gap: "20px", flexWrap: "wrap" }}>
-                            <Link href="/projects" className="cta-btn-primary">
-                                View Projects
-                            </Link>
                             <Link href="/about" className="cta-btn-secondary">
                                 About Me
                             </Link>

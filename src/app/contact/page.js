@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function Contact() {
     const [status, setStatus] = useState("");
+    const [isHovered, setIsHovered] = useState(false);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -31,7 +32,7 @@ export default function Contact() {
 
     return (
         <section>
-            <h2 style={{ fontSize: "32px", fontWeight: "700", color: "#1F3B57" }}>
+            <h2 style={{ fontSize: "32px", fontWeight: "700", color: "var(--text-primary)" }}>
                 Contact
             </h2>
 
@@ -52,7 +53,11 @@ export default function Contact() {
                     style={{
                         padding: "14px",
                         borderRadius: "8px",
-                        border: "1px solid #CCC"
+                        border: "1px solid var(--border-color)",
+                        background: "var(--card-bg)",
+                        color: "var(--text-primary)",
+                        fontSize: "16px",
+                        outline: "none"
                     }}
                 />
 
@@ -64,7 +69,11 @@ export default function Contact() {
                     style={{
                         padding: "14px",
                         borderRadius: "8px",
-                        border: "1px solid #CCC"
+                        border: "1px solid var(--border-color)",
+                        background: "var(--card-bg)",
+                        color: "var(--text-primary)",
+                        fontSize: "16px",
+                        outline: "none"
                     }}
                 />
 
@@ -76,20 +85,47 @@ export default function Contact() {
                     style={{
                         padding: "14px",
                         borderRadius: "8px",
-                        border: "1px solid #CCC"
+                        border: "1px solid var(--border-color)",
+                        background: "var(--card-bg)",
+                        color: "var(--text-primary)",
+                        fontSize: "16px",
+                        outline: "none",
+                        resize: "vertical"
                     }}
                 />
 
                 <button
                     type="submit"
-                    className="button"
-                    style={{ width: "fit-content" }}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    style={{
+                        width: "fit-content",
+                        padding: "16px 32px",
+                        background: "var(--accent-blue)",
+                        color: "#ffffff",
+                        border: "none",
+                        borderRadius: "8px",
+                        fontWeight: "600",
+                        fontSize: "16px",
+                        cursor: "pointer",
+                        boxShadow: "0 4px 14px 0 rgba(58,110,165,0.3)",
+                        transition: "all 0.2s ease",
+                        transform: isHovered ? "translateY(-2px)" : "translateY(0)",
+                        boxShadow: isHovered
+                            ? "0 6px 20px 0 rgba(58,110,165,0.4)"
+                            : "0 4px 14px 0 rgba(58,110,165,0.3)"
+                    }}
                 >
                     Send Message
                 </button>
 
                 {status && (
-                    <p style={{ marginTop: "10px", color: "#1F3B57" }}>
+                    <p style={{
+                        marginTop: "10px",
+                        color: status === "Message sent successfully"
+                            ? "var(--accent-blue)"
+                            : "var(--text-secondary)"
+                    }}>
                         {status}
                     </p>
                 )}

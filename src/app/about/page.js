@@ -22,7 +22,7 @@ export default function About() {
                         I am an AI Engineer and Data Scientist based in Atlanta, GA. I focus on building scalable machine learning solutions, generative AI applications, and advanced retrieval architectures.
                     </p>
                     <p style={{ fontSize: "18px", color: "var(--text-secondary)", lineHeight: "1.7", marginBottom: "32px" }}>
-                        My engineering approach combines algorithmic foundation with clean data practices to build end-to-end systems — from raw data ingestion to deployed, interpretable models.
+                        My engineering approach combines algorithmic foundation with clean data practices to build end-to-end systems, from raw data ingestion to deployed, interpretable models.
                     </p>
 
                     <a
@@ -56,7 +56,7 @@ export default function About() {
                 <div style={{ background: "var(--card-bg)", padding: "28px", borderRadius: "12px", border: "1px solid var(--border-color)", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-start", gap: "16px" }}>
                     <div>
                         <h3 style={{ fontSize: "20px", fontWeight: "700", color: "var(--text-primary)", marginBottom: "6px" }}>
-                            Master of Science — Data Science and Analytics
+                            Master of Science in Data Science and Analytics
                         </h3>
                         <p style={{ fontSize: "16px", color: "var(--accent-blue)", fontWeight: "600", marginBottom: "4px" }}>
                             Georgia State University, J. Mack Robinson College of Business
@@ -67,6 +67,23 @@ export default function About() {
                     </div>
                     <div style={{ background: "var(--bg-color)", border: "1px solid var(--border-color)", color: "var(--accent-blue)", padding: "6px 16px", borderRadius: "20px", fontSize: "14px", fontWeight: "700", whiteSpace: "nowrap" }}>
                         Graduated: Dec 2025
+                    </div>
+                </div>
+
+                <div style={{ background: "var(--card-bg)", padding: "28px", borderRadius: "12px", border: "1px solid var(--border-color)", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-start", gap: "16px", marginTop: "16px" }}>
+                    <div>
+                        <h3 style={{ fontSize: "20px", fontWeight: "700", color: "var(--text-primary)", marginBottom: "6px" }}>
+                            Bachelor of Technology in Electronics and Communication Engineering
+                        </h3>
+                        <p style={{ fontSize: "16px", color: "var(--accent-blue)", fontWeight: "600", marginBottom: "4px" }}>
+                            Jawaharlal Nehru Technological University College of Engineering
+                        </p>
+                        <p style={{ fontSize: "15px", color: "var(--text-secondary)", fontWeight: "500" }}>
+                            Hyderabad, India
+                        </p>
+                    </div>
+                    <div style={{ background: "var(--bg-color)", border: "1px solid var(--border-color)", color: "var(--accent-blue)", padding: "6px 16px", borderRadius: "20px", fontSize: "14px", fontWeight: "700", whiteSpace: "nowrap" }}>
+                        Graduated: May 2024
                     </div>
                 </div>
             </div>

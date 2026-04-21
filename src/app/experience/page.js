@@ -144,12 +144,13 @@ export default function Experience() {
                         <button
                             onClick={() => setSelectedExp(null)}
                             style={{
-                                position: "absolute", top: "24px", right: "24px", background: "var(--bg-color)", border: "1px solid var(--border-color)",
-                                width: "40px", height: "40px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
-                                fontSize: "18px", cursor: "pointer", color: "var(--text-primary)", transition: "background 0.2s"
+                                position: "fixed", top: "24px", right: "24px", background: "var(--card-bg)", border: "1px solid var(--border-color)",
+                                width: "44px", height: "44px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
+                                fontSize: "18px", cursor: "pointer", color: "var(--text-primary)", transition: "background 0.2s",
+                                zIndex: 10000, boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
                             }}
                             onMouseOver={(e) => e.currentTarget.style.background = "var(--border-color)"}
-                            onMouseOut={(e) => e.currentTarget.style.background = "var(--bg-color)"}
+                            onMouseOut={(e) => e.currentTarget.style.background = "var(--card-bg)"}
                         >
                             ✕
                         </button>

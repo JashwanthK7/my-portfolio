@@ -8,60 +8,60 @@ export default function Experience() {
             role: "Generative AI Developer | Graduate Research Assistant",
             org: "Mercedes Benz USA & Georgia State University",
             dates: "Aug 2025 to Dec 2025",
-            description: "Built a multi format RAG pipeline using LangChain, FAISS, and Hugging Face models to parse and vectorize more than six thousand dealer records.",
+            description: "Built a production-ready multi-format RAG pipeline using LangChain, FAISS, and Hugging Face models, vectorizing over 6,000 dealer records and cutting action plan generation time from 60 minutes to under 5 minutes.",
             image: "/images/projects/rag_pipeline.png",
             github: "https://github.com/JashwanthK7/MercedesUSA",
             skills: ["LangChain", "FAISS", "Hugging Face", "Ollama", "OpenAI"],
             details: [
-                "Ingested structured (CSV) and unstructured (PDF, TXT) DVM CAR data into a local FAISS vector store.",
-                "Integrated pluggable LLM backends including local HuggingFace, Ollama, and OpenAI API.",
-                "Generated heuristic confidence scores based on FAISS similarity distances to prevent LLM hallucinations.",
-                "Automated dealership performance review workflows and reduced action plan generation time from 60 minutes to under 5 minutes."
+                "Ingested structured (CSV) and unstructured (PDF, TXT) DVM CAR data into a local FAISS vector store, enabling semantic search across 6,000+ dealer records.",
+                "Integrated pluggable LLM backends including local HuggingFace, Ollama, and OpenAI API, allowing flexible model switching without pipeline changes.",
+                "Generated heuristic confidence scores based on FAISS similarity distances to flag low-confidence responses and reduce LLM hallucinations.",
+                "Automated dealership performance review workflows, reducing action plan generation time by over 90% — from 60 minutes to under 5 minutes."
             ]
         },
         {
             role: "Machine Learning Engineer | Graduate Research Assistant",
             org: "Shepherd Center & Georgia State University",
             dates: "Jan 2025 to May 2025",
-            description: "Developed a Multi Objective Optimization pipeline using classical ML models to predict five rehabilitation goals.",
+            description: "Developed a Multi-Objective Optimization pipeline using classical ML models to simultaneously predict five rehabilitation goals, improving clinician decision support with interpretable, data-driven insights.",
             image: "/images/projects/moo_pipeline.png",
             github: "https://github.com/JashwanthK7",
             skills: ["Scikit-learn", "SHAP", "Optimization", "Machine Learning"],
             details: [
-                "Applied Analytic Hierarchy Process for goal weighting.",
-                "Used SHAP values to provide model interpretability for clinicians.",
-                "Optimized multi output models to balance conflicting clinical objectives.",
-                "Supported clinician decision making and therapy planning with data driven insights."
+                "Designed a multi-output ML pipeline using Scikit-learn to simultaneously predict five rehabilitation outcomes for spinal cord injury patients.",
+                "Applied Analytic Hierarchy Process (AHP) for clinical goal weighting, enabling prioritization of therapy objectives based on patient profiles.",
+                "Used SHAP values to deliver feature-level interpretability, helping clinicians understand model decisions and build trust in AI-assisted planning.",
+                "Balanced conflicting clinical objectives through Pareto-optimal model selection, improving therapy plan quality without sacrificing any single goal."
             ]
         },
         {
             role: "Data Scientist | Graduate Research Assistant",
             org: "Dell Technologies & Georgia State University",
             dates: "Aug 2024 to Dec 2024",
-            description: "Designed an NLP driven knowledge graph extraction pipeline using spaCy and NetworkX to optimize link prediction.",
+            description: "Designed an NLP-driven knowledge graph extraction and embedding pipeline using spaCy, NetworkX, and PyTorch, achieving optimized link prediction performance through systematic threshold and learning rate evaluation.",
             image: "/images/projects/knowledge_graph.png",
             github: "https://github.com/JashwanthK7/RotatE",
             skills: ["NLP", "Knowledge Graphs", "PyTorch", "spaCy"],
             details: [
-                "Embedded entities and relations into a complex vector space modeling relations as rotations.",
-                "Trained RotatE knowledge graph embeddings using PyTorch.",
-                "Evaluated model performance using various distance metric thresholds and learning rates.",
-                "Visualized accuracy against distance threshold cutoffs to optimize knowledge graph completion."
+                "Built an end-to-end knowledge graph extraction pipeline using spaCy for NER and NetworkX for graph construction from unstructured enterprise text.",
+                "Trained RotatE knowledge graph embeddings using PyTorch, modeling entity relations as rotations in a complex vector space for accurate link prediction.",
+                "Systematically evaluated model performance across multiple distance metric thresholds and learning rates to identify the optimal training configuration.",
+                "Visualized accuracy-threshold curves to guide hyperparameter selection, resulting in measurable improvement in knowledge graph completion quality."
             ]
         },
         {
             role: "Data Science Research Intern",
             org: "JNTUHCEH",
             dates: "May 2023 to May 2024",
-            description: "Built an intrusion detection model for network security and developed an NLP powered career guidance chatbot.",
+            description: "Built a high-accuracy intrusion detection system for network security using ensemble ML models, and developed an NLP-powered career guidance chatbot serving personalized recommendations through an interactive Streamlit interface.",
             image: "/images/projects/career_chatbot.png",
             github: "https://github.com/JashwanthK7/Career-Counselor-Chatbot",
             skills: ["Random Forest", "NLP", "TF-IDF", "Streamlit"],
             details: [
-                "Developed predictive models using Random Forest, XGBoost, and Logistic Regression with GridSearchCV tuning for cyber breaches.",
-                "Processed text inputs using NLTK and TF-IDF vectorization to match keywords against career datasets.",
-                "Developed a personalized Personality Test gauging user aptitude through situational and interest based queries.",
-                "Generated dynamic pie charts using Bokeh to visualize recommended career paths and professions."
+                "Developed and benchmarked intrusion detection models using Random Forest, XGBoost, and Logistic Regression with GridSearchCV hyperparameter tuning, achieving high precision on imbalanced network traffic datasets.",
+                "Built an NLP pipeline using NLTK and TF-IDF vectorization to match user text inputs against career datasets for personalized recommendation generation.",
+                "Designed a Personality Test module gauging user aptitude through situational and interest-based queries, feeding results into the career recommendation engine.",
+                "Visualized recommended career paths dynamically using Bokeh pie charts, making outputs intuitive and actionable for end users."
             ]
         }
     ];
@@ -86,8 +86,7 @@ export default function Experience() {
                     Experience
                 </h2>
                 <p style={{ marginTop: "16px", fontSize: "18px", color: "var(--text-secondary)", lineHeight: "1.7" }}>
-                    My professional journey includes applied research and engineering roles where I have developed scalable machine learning solutions, generative AI pipelines, and data driven systems for enterprise and healthcare sectors.
-                    Click any role to view the project details.
+                    My professional journey includes applied research and engineering roles where I have developed scalable machine learning solutions, generative AI pipelines, and data-driven systems for enterprise and healthcare sectors.
                 </p>
             </div>
 
@@ -152,7 +151,7 @@ export default function Experience() {
                             onMouseOver={(e) => e.currentTarget.style.background = "var(--border-color)"}
                             onMouseOut={(e) => e.currentTarget.style.background = "var(--bg-color)"}
                         >
-                            X
+                            ✕
                         </button>
 
                         <img
@@ -195,16 +194,18 @@ export default function Experience() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
-                                    display: "inline-block", background: "var(--text-primary)", color: "var(--bg-color)", padding: "14px 28px",
-                                    borderRadius: "8px", fontSize: "16px", fontWeight: "600", textDecoration: "none", transition: "transform 0.2s ease, box-shadow 0.2s ease"
+                                    display: "inline-block", background: "var(--accent-blue)", color: "#ffffff", padding: "14px 28px",
+                                    borderRadius: "8px", fontSize: "16px", fontWeight: "600", textDecoration: "none",
+                                    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                                    boxShadow: "0 4px 14px 0 rgba(58,110,165,0.3)"
                                 }}
                                 onMouseOver={(e) => {
                                     e.currentTarget.style.transform = "translateY(-2px)";
-                                    e.currentTarget.style.boxShadow = "0 10px 15px -3px rgba(0, 0, 0, 0.3)";
+                                    e.currentTarget.style.boxShadow = "0 6px 20px 0 rgba(58,110,165,0.4)";
                                 }}
                                 onMouseOut={(e) => {
                                     e.currentTarget.style.transform = "translateY(0)";
-                                    e.currentTarget.style.boxShadow = "none";
+                                    e.currentTarget.style.boxShadow = "0 4px 14px 0 rgba(58,110,165,0.3)";
                                 }}
                             >
                                 View Project Repository

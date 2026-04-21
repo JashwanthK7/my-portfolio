@@ -155,11 +155,29 @@ export default function Experience() {
                             ✕
                         </button>
 
-                        <img
-                            src={selectedExp.image}
-                            alt={selectedExp.org}
-                            style={{ width: "100%", borderRadius: "12px", height: "300px", objectFit: "cover", marginBottom: "32px", border: "1px solid var(--border-color)" }}
-                        />
+                        <div style={{
+                            width: "100%",
+                            height: "300px",
+                            borderRadius: "12px",
+                            border: "1px solid var(--border-color)",
+                            background: "var(--card-bg)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            overflow: "hidden",
+                            marginBottom: "32px"
+                        }}>
+                            <img
+                                src={selectedExp.image}
+                                alt={selectedExp.org}
+                                style={{
+                                    maxWidth: "100%",
+                                    maxHeight: "100%",
+                                    objectFit: "contain",
+                                    borderRadius: "8px"
+                                }}
+                            />
+                        </div>
 
                         <h2 style={{ fontSize: "32px", color: "var(--text-primary)", marginBottom: "8px", fontWeight: "800", letterSpacing: "-0.5px" }}>
                             {selectedExp.role}

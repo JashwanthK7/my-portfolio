@@ -168,11 +168,29 @@ export default function Projects() {
                             ✕
                         </button>
 
-                        <img
-                            src={selectedProject.image}
-                            alt={selectedProject.title}
-                            style={{ width: "100%", borderRadius: "8px", height: "300px", objectFit: "cover", marginBottom: "24px", border: "1px solid var(--border-color)" }}
-                        />
+                        <div style={{
+                            width: "100%",
+                            height: "300px",
+                            borderRadius: "8px",
+                            border: "1px solid var(--border-color)",
+                            background: "var(--card-bg)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            overflow: "hidden",
+                            marginBottom: "24px"
+                        }}>
+                            <img
+                                src={selectedProject.image}
+                                alt={selectedProject.title}
+                                style={{
+                                    maxWidth: "100%",
+                                    maxHeight: "100%",
+                                    objectFit: "contain",
+                                    borderRadius: "6px"
+                                }}
+                            />
+                        </div>
 
                         <h2 style={{ fontSize: "28px", color: "var(--text-primary)", marginBottom: "8px", fontWeight: "700" }}>
                             {selectedProject.title}

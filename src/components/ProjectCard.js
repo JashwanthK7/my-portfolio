@@ -39,11 +39,28 @@ export default function ProjectCard({ project, currentFilter, onFilterClick, onC
                     transition: "transform 0.2s ease, box-shadow 0.2s ease"
                 }}
             >
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    style={{ width: "100%", borderRadius: "10px", objectFit: "cover", height: "200px", border: "1px solid var(--border-color)" }}
-                />
+                <div style={{
+                    width: "100%",
+                    height: "200px",
+                    borderRadius: "10px",
+                    border: "1px solid var(--border-color)",
+                    background: "var(--card-bg)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    overflow: "hidden"
+                }}>
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        style={{
+                            maxWidth: "100%",
+                            maxHeight: "100%",
+                            objectFit: "contain",
+                            borderRadius: "8px"
+                        }}
+                    />
+                </div>
 
                 <h3 style={{ fontSize: "20px", fontWeight: "700", color: "var(--text-primary)" }}>
                     {project.title}

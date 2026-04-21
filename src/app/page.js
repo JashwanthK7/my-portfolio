@@ -5,6 +5,7 @@ import Link from "next/link";
 export default function Home() {
     const [isVisible, setIsVisible] = useState(false);
     const [typedName, setTypedName] = useState("");
+    const [isTypingDone, setIsTypingDone] = useState(false);
     const fullName = "Jashwanth.";
 
     useEffect(() => {
@@ -17,6 +18,7 @@ export default function Home() {
                 i++;
             } else {
                 clearInterval(typingInterval);
+                setIsTypingDone(true); // hide cursor after typing is done
             }
         }, 120);
 
@@ -51,6 +53,51 @@ export default function Home() {
                 .hide-scrollbar::-webkit-scrollbar {
                     display: none;
                 }
+                .cta-btn-primary {
+                    padding: 16px 32px;
+                    background: var(--text-primary);
+                    color: var(--bg-color);
+                    borderRadius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    box-shadow: 0 4px 14px 0 rgba(0,0,0,0.2);
+                    transition: all 0.2s ease;
+                    border-radius: 8px;
+                    display: inline-block;
+                }
+                .cta-btn-primary:hover {
+                    transform: translateY(-2px);
+                }
+                .cta-btn-secondary {
+                    padding: 16px 32px;
+                    background: var(--card-bg);
+                    color: var(--text-primary);
+                    border: 2px solid var(--border-color);
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: all 0.2s ease;
+                    display: inline-block;
+                }
+                .cta-btn-secondary:hover {
+                    border-color: var(--text-primary);
+                    transform: translateY(-2px);
+                }
+                .cta-btn-accent {
+                    padding: 16px 32px;
+                    background: var(--accent-blue);
+                    color: #ffffff;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    box-shadow: 0 4px 14px 0 rgba(58,110,165,0.3);
+                    transition: all 0.2s ease;
+                    display: inline-block;
+                }
+                .cta-btn-accent:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px 0 rgba(58,110,165,0.4);
+                }
                 `}
             </style>
 
@@ -82,12 +129,14 @@ export default function Home() {
                     <h1 style={{
                         fontSize: "56px",
                         fontWeight: "800",
-                        color: "var(--text-primary)", /* Fixed */
+                        color: "var(--text-primary)",
                         letterSpacing: "-1px",
                         lineHeight: "1.1",
                         margin: 0
                     }}>
-                        Hi, I am <span style={{ color: "var(--accent-blue)" }}>{typedName}</span><span className="cursor">|</span>
+                        Hi, I am{" "}
+                        <span style={{ color: "var(--accent-blue)" }}>{typedName}</span>
+                        {!isTypingDone && <span className="cursor">|</span>}
                     </h1>
 
                     <div style={{
@@ -99,7 +148,7 @@ export default function Home() {
                             marginTop: "24px",
                             fontSize: "28px",
                             fontWeight: "600",
-                            color: "var(--text-secondary)", /* Fixed */
+                            color: "var(--text-secondary)",
                             maxWidth: "800px",
                             lineHeight: "1.4"
                         }}>
@@ -110,7 +159,7 @@ export default function Home() {
                         <p style={{
                             marginTop: "24px",
                             fontSize: "20px",
-                            color: "var(--text-secondary)", /* Fixed */
+                            color: "var(--text-secondary)",
                             maxWidth: "600px",
                             lineHeight: "1.6"
                         }}>
@@ -118,41 +167,14 @@ export default function Home() {
                         </p>
 
                         <div style={{ marginTop: "48px", display: "flex", gap: "20px", flexWrap: "wrap" }}>
-                            <Link href="/projects" style={{
-                                padding: "16px 32px",
-                                background: "var(--text-primary)", /* Fixed */
-                                color: "var(--bg-color)", /* Fixed */
-                                borderRadius: "8px",
-                                fontWeight: "600",
-                                textDecoration: "none",
-                                boxShadow: "0 4px 14px 0 rgba(0,0,0,0.2)",
-                                transition: "all 0.2s ease"
-                            }}
-                                onMouseOver={(e) => e.currentTarget.style.transform = "translateY(-2px)"}
-                                onMouseOut={(e) => e.currentTarget.style.transform = "translateY(0)"}
-                            >
+                            <Link href="/projects" className="cta-btn-primary">
                                 View Projects
                             </Link>
-                            <Link href="/about" style={{
-                                padding: "16px 32px",
-                                background: "var(--card-bg)",
-                                color: "var(--text-primary)",
-                                border: "2px solid var(--border-color)",
-                                borderRadius: "8px",
-                                fontWeight: "600",
-                                textDecoration: "none",
-                                transition: "all 0.2s ease"
-                            }}
-                                onMouseOver={(e) => {
-                                    e.currentTarget.style.borderColor = "var(--text-primary)";
-                                    e.currentTarget.style.transform = "translateY(-2px)";
-                                }}
-                                onMouseOut={(e) => {
-                                    e.currentTarget.style.borderColor = "var(--border-color)";
-                                    e.currentTarget.style.transform = "translateY(0)";
-                                }}
-                            >
+                            <Link href="/about" className="cta-btn-secondary">
                                 About Me
+                            </Link>
+                            <Link href="/contact" className="cta-btn-accent">
+                                Get in Touch
                             </Link>
                         </div>
                     </div>
@@ -174,7 +196,7 @@ export default function Home() {
                             left: "-20px",
                             width: "100%",
                             height: "100%",
-                            border: "3px solid var(--border-color)", /* Adapts nicely now */
+                            border: "3px solid var(--border-color)",
                             borderRadius: "24px",
                             zIndex: -1
                         }} />

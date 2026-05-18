@@ -25,7 +25,6 @@ export default function Experience() {
             dates: "Jan 2025 to May 2025",
             description: "Developed a Multi-Objective Optimization pipeline using classical ML models to simultaneously predict five rehabilitation goals, improving clinician decision support with interpretable, data-driven insights.",
             image: "/images/projects/moo_pipeline.png",
-            github: "https://github.com/JashwanthK7",
             skills: ["Scikit-learn", "SHAP", "Optimization", "Machine Learning"],
             details: [
                 "Designed a multi-output ML pipeline using Scikit-learn to simultaneously predict five rehabilitation outcomes for spinal cord injury patients.",
